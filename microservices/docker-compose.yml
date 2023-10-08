@@ -19,10 +19,10 @@ services:
     image: mysql
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ms_orders
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_ROOT_PASSWORD: root
+      MYSQL_DB: ms_orders
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     expose:
