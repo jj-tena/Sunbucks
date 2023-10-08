@@ -1,8 +1,6 @@
 package com.jjtena.ordersservice.service;
 
-import com.jjtena.ordersservice.model.dtos.BaseResponse;
-import com.jjtena.ordersservice.model.dtos.OrderItemRequest;
-import com.jjtena.ordersservice.model.dtos.OrderRequest;
+import com.jjtena.ordersservice.model.dtos.*;
 import com.jjtena.ordersservice.model.entities.Order;
 import com.jjtena.ordersservice.model.entities.OrderItem;
 import com.jjtena.ordersservice.repositories.OrderRepository;
@@ -42,6 +40,21 @@ public class OrderService {
                 .retrieve()
                 .bodyToMono(BaseResponse.class)
                 .block();
+    }
+
+    public List<OrderResponse> getOrders() {
+        List<Order> orders = this.orderRepository.findAll();
+        return orders.stream().map(this::mapToOrderResponse).toList();
+    }
+
+    private OrderResponse mapToOrderResponse(Order order) {
+        return new OrderResponse(order.getId(), order.getOrderNumber(),
+                order.getOrderItems().stream().map(this::mapToOrderItemResponse).toList());
+    }
+
+    private OrderItemResponse mapToOrderItemResponse(OrderItem orderItem) {
+        return new OrderItemResponse(orderItem.getId(), orderItem.getSku(),
+                orderItem.getPrice(), orderItem.getQuantity());
     }
 
     private OrderItem mapOrderItemRequestToOrderItem(OrderItemRequest orderItemRequest, Order order) {
