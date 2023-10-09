@@ -55,3 +55,19 @@ services:
       - 9090:9090
     volumes:
       - ./files/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana-oss
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    links:
+      - prometheus
+    environment:
+      GF_SECURITY:ADMIN_PASSWORD: admin
+      GF_SECURITY:ADMIN_USER: admin
+    depends_on:
+      - prometheus
