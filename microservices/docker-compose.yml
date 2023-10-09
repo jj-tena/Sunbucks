@@ -41,3 +41,9 @@ services:
     expose:
       - 5433
     command: -p 5433
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411

@@ -4,6 +4,8 @@ import com.jjtena.ordersservice.model.dtos.*;
 import com.jjtena.ordersservice.model.entities.Order;
 import com.jjtena.ordersservice.model.entities.OrderItem;
 import com.jjtena.ordersservice.repositories.OrderRepository;
+import io.micrometer.observation.Observation;
+import io.micrometer.observation.ObservationRegistry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -17,19 +19,23 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
+    private final ObservationRegistry observationRegistry;
 
     public void addOrder(OrderRequest orderRequest) {
-        BaseResponse baseResponse = checkInventory(orderRequest.getOrderItemRequests());
-        if (baseResponse != null && !baseResponse.hasErrors()) {
-            Order order = new Order();
-            order.setOrderNumber(UUID.randomUUID().toString());
-            order.setOrderItems(orderRequest.getOrderItemRequests().stream()
-                    .map(orderItemRequest -> mapOrderItemRequestToOrderItem(orderItemRequest, order))
-                    .toList());
-            this.orderRepository.save(order);
-        } else {
-            throw new IllegalArgumentException("Some of the products are not in stock");
-        }
+        Observation inventoryObservation = Observation.createNotStarted("inventory-service", observationRegistry);
+        inventoryObservation.observe(() -> {
+            BaseResponse baseResponse = checkInventory(orderRequest.getOrderItemRequests());
+            if (baseResponse != null && !baseResponse.hasErrors()) {
+                Order order = new Order();
+                order.setOrderNumber(UUID.randomUUID().toString());
+                order.setOrderItems(orderRequest.getOrderItemRequests().stream()
+                        .map(orderItemRequest -> mapOrderItemRequestToOrderItem(orderItemRequest, order))
+                        .toList());
+                this.orderRepository.save(order);
+            } else {
+                throw new IllegalArgumentException("Some of the products are not in stock");
+            }
+        });
     }
 
     private BaseResponse checkInventory(List<OrderItemRequest> orderItemRequests) {
