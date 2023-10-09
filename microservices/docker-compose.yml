@@ -47,3 +47,11 @@ services:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./files/prometheus.yml:/etc/prometheus/prometheus.yml
