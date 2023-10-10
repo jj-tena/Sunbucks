@@ -21,7 +21,7 @@ public class OrderService {
     private final WebClient.Builder webClientBuilder;
     private final ObservationRegistry observationRegistry;
 
-    public void addOrder(OrderRequest orderRequest) {
+    public OrderResponse addOrder(OrderRequest orderRequest) {
         Observation inventoryObservation = Observation.createNotStarted("inventory-service", observationRegistry);
         inventoryObservation.observe(() -> {
             BaseResponse baseResponse = checkInventory(orderRequest.getOrderItemRequests());
@@ -31,11 +31,13 @@ public class OrderService {
                 order.setOrderItems(orderRequest.getOrderItemRequests().stream()
                         .map(orderItemRequest -> mapOrderItemRequestToOrderItem(orderItemRequest, order))
                         .toList());
-                this.orderRepository.save(order);
+                Order orderSaved = this.orderRepository.save(order);
+                return mapToOrderResponse(orderSaved);
             } else {
                 throw new IllegalArgumentException("Some of the products are not in stock");
             }
         });
+        return null;
     }
 
     private BaseResponse checkInventory(List<OrderItemRequest> orderItemRequests) {

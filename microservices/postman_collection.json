@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7762512e-5e3d-4098-b8bd-30311e0fd681",
+		"_postman_id": "189eb0ed-1975-4bf2-b74a-282f36ab72fb",
 		"name": "Sunbucks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14839361"
@@ -139,6 +139,71 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessTokenUrl",
+				"value": "http://localhost:8181/realms/microservices-realm/protocol/openid-connect/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "http://localhost:8181/realms/microservices-realm/protocol/openid-connect/auth",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "microservices_client",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "yVTQeMD8rlJYDhFR7xVGhjxwmXl10Ggn",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "http://localhost:8080/login/oauth2/code/keycloak",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "kc_token",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
