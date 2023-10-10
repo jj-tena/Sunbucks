@@ -1,12 +1,16 @@
 package com.jjtena.ordersservice.service;
 
+import com.jjtena.ordersservice.events.OrderEvent;
 import com.jjtena.ordersservice.model.dtos.*;
 import com.jjtena.ordersservice.model.entities.Order;
 import com.jjtena.ordersservice.model.entities.OrderItem;
+import com.jjtena.ordersservice.model.enums.OrderStatus;
 import com.jjtena.ordersservice.repositories.OrderRepository;
+import com.jjtena.ordersservice.utils.JsonUtil;
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationRegistry;
 import lombok.RequiredArgsConstructor;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -19,6 +23,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
+    private final KafkaTemplate<String,String> kafkaTemplate;
     private final ObservationRegistry observationRegistry;
 
     public OrderResponse addOrder(OrderRequest orderRequest) {
@@ -32,6 +37,9 @@ public class OrderService {
                         .map(orderItemRequest -> mapOrderItemRequestToOrderItem(orderItemRequest, order))
                         .toList());
                 Order orderSaved = this.orderRepository.save(order);
+                this.kafkaTemplate.send("orders-topic", JsonUtil.toJson(
+                        new OrderEvent(orderSaved.getOrderNumber(), orderSaved.getOrderItems().size(), OrderStatus.PLACED)
+                ));
                 return mapToOrderResponse(orderSaved);
             } else {
                 throw new IllegalArgumentException("Some of the products are not in stock");
