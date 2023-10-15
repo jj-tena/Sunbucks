@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './components/screens/Home';
-import Product from './components/screens/Product';
-import Cart from './components/screens/Cart';
+import Home from './views/home';
+import Product from './views/Product';
+import Cart from './views/Cart';
 
 export default function App() {
 

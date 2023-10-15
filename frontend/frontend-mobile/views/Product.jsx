@@ -1,9 +1,12 @@
 import { View, Text } from "react-native"
 
-const Product = () => {
+const Product = ({route}) => {
+
+    const {product} = route.params;
+
     return (
         <View>
-            <Text>Product</Text>
+            <Text>{product.name}</Text>
         </View>
     )
 }
