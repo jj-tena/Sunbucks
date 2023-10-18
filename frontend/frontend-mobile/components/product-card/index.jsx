@@ -17,6 +17,7 @@ const ProductCard = ({product}) => {
                 <Image 
                     source={product.image}
                     style={ProductCardStyles.image}
+                    resizeMode={"cover"}
                 />
             </View>
             <Text

@@ -16,7 +16,8 @@ const ProductCardStyles = {
     }, image: {
         width: '80%',
         height: '80%',
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        borderRadius: 10
     }, name: {
         fontSize: 12,
         color: COLOURS.black,
