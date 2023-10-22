@@ -16,7 +16,6 @@ const ProductHomeCardStyles = {
     }, image: {
         width: '80%',
         height: '80%',
-        resizeMode: 'contain',
         borderRadius: 10
     }, name: {
         fontSize: 12,

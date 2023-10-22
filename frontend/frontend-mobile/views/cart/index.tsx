@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native"
+import { View, Text, ScrollView, Pressable } from "react-native"
 import { COLOURS } from "../../constants/colours";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import useCart from "./Cart";
@@ -8,15 +8,15 @@ import ProductCartCard from "../../components/product-cart-card";
 
 const Cart = () => {
 
-    const {cart, total, goHome, navigation, checkout} = useCart();
+    const {cart, total, goHome, checkout} = useCart();
 
     return (
         <View style={CartStyles.mainContainer}>
             <ScrollView>
                 <View style={CartStyles.headerContainer}>
-                    <TouchableOpacity onPress={goHome}>
+                    <Pressable onPress={goHome}>
                         <MaterialCommunityIcons name="chevron-left" style={CartStyles.backIcon} />
-                    </TouchableOpacity>
+                    </Pressable>
                     <Text style={CartStyles.headerText}>
                         Detalles del pedido
                     </Text>
@@ -120,13 +120,13 @@ const Cart = () => {
                 </View>
             </ScrollView>
             <View style={CartStyles.buttonContainer}>
-                <TouchableOpacity 
+                <Pressable 
                     onPress={() => (total != 0 ? checkout() : null)}
                     style={CartStyles.buttonTouchable}>
                         <Text style={CartStyles.buttonName}>
                             Confirmar pedido
                         </Text>
-                </TouchableOpacity>
+                </Pressable>
             </View>
         </View>
     )

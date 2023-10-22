@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, StatusBar, ScrollView } from "react-native"
+import { View, Text, Pressable, Image, StatusBar, ScrollView } from "react-native"
 import ProductStyles from "./Product.styles";
 import { COLOURS } from "../../constants/colours";
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -13,18 +13,18 @@ const Product = ({route}) => {
     return (
         <View style={ProductStyles.main}>
             <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow: 1}}>
                 <View style={ProductStyles.header1}>
                     <View style={ProductStyles.homeContainer}>
-                        <TouchableOpacity onPress={goHome}>
+                        <Pressable onPress={goHome}>
                             <Entypo
                                 name="chevron-left"
                                 style={ProductStyles.home}
                             />
-                        </TouchableOpacity>
+                        </Pressable>
                     </View>
                     <View style={ProductStyles.imageContainer}>
-                        <Image resizeMode={"cover"} source={product.image} style={ProductStyles.image}/>
+                        <Image source={product.image} style={ProductStyles.image}/>
                     </View>
                 </View>
                 <View style={ProductStyles.bodyContainer}>
@@ -50,13 +50,13 @@ const Product = ({route}) => {
                     </View>
                     
                     <View style={ProductStyles.buttonContainer}>
-                        <TouchableOpacity 
+                        <Pressable 
                         onPress={() => addToCart(product.id)}
                         style={ProductStyles.buttonTouchable}>
                             <Text style={ProductStyles.buttonName}>
                                 Añadir al carrito
                             </Text>
-                        </TouchableOpacity>
+                        </Pressable>
                     </View>
                 </View>
             </ScrollView>

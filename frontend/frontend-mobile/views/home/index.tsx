@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, ScrollView, TouchableOpacity } from "react-native"
+import { View, Text, StatusBar, ScrollView, Pressable } from "react-native"
 import { COLOURS } from "../../constants/colours";
 import Entypo from 'react-native-vector-icons/Entypo'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -15,18 +15,18 @@ const Home = () => {
             <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={HomeStyles.header1}>
-                    <TouchableOpacity>
+                    <Pressable>
                         <Entypo 
                             name="shopping-bag"
                             style={HomeStyles.shoppingBag}
                         />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={goCart}>
+                    </Pressable>
+                    <Pressable onPress={goCart}>
                         <MaterialCommunityIcons 
                             name="cart"
                             style={HomeStyles.cart}
                         />
-                    </TouchableOpacity>
+                    </Pressable>
                 </View>
 
                 <View style={HomeStyles.header2}>

@@ -178,7 +178,7 @@ const CartStyles = StyleSheet.create({
         alignItems: 'center'
     }, buttonTouchable: {
         width: '86%',
-        height: '30%',
+        height: '60%',
         backgroundColor: COLOURS.blue,
         borderRadius: 20,
         justifyContent: 'center',

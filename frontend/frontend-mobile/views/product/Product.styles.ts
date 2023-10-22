@@ -37,7 +37,6 @@ const ProductStyles = StyleSheet.create({
     }, image: {
         width: '80%',
         height: '100%',
-        resizeMode: 'contain',
         borderRadius: 15
     }, bodyContainer: {
         paddingHorizontal: 16,
@@ -80,10 +79,10 @@ const ProductStyles = StyleSheet.create({
         color: COLOURS.black,
         marginBottom: 15
     }, buttonContainer: {
-        height: '48%',
+        height: '30%',
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }, buttonTouchable: {
         width: '86%',
         height: '90%',
@@ -92,7 +91,7 @@ const ProductStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     }, buttonName: {
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: '500',
         letterSpacing: 1,
         color: COLOURS.white,

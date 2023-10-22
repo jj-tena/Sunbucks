@@ -1,4 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, Pressable, View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLOURS } from "../../constants/colours";
 import useProductCartCard from "./ProductCartCard";
@@ -9,13 +9,13 @@ const ProductCartCard = ({product}) => {
     const {navigation, deleteProduct} = useProductCartCard(product);
 
     return (
-        <TouchableOpacity
+        <Pressable
             onPress={() => navigation.navigate('Product', {product: product})}
             style={ProductCartCardStyles.main}
         >
             <View style={ProductCartCardStyles.imageContainer}>
                 <Image 
-                    source={{ uri: product.image }}
+                    source={product.image}
                     style={ProductCartCardStyles.image}
                 />
             </View>
@@ -47,7 +47,7 @@ const ProductCartCard = ({product}) => {
                             <MaterialCommunityIcons name="plus" style={ProductCartCardStyles.actionsUnitsLessIcon}/>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={() => deleteProduct(product.id)}>
+                    <Pressable onPress={() => deleteProduct(product.id)}>
                         <MaterialCommunityIcons name="delete-outline" style={{
                             fontSize: 16,
                             color: COLOURS.backgroundDark,
@@ -55,10 +55,10 @@ const ProductCartCard = ({product}) => {
                             padding: 8,
                             borderRadius: 100,
                         }}/>
-                    </TouchableOpacity>
+                    </Pressable>
                 </View>
             </View>
-        </TouchableOpacity>
+        </Pressable>
     );
 }
 

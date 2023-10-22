@@ -19,7 +19,6 @@ const ProductCartCardStyles = {
     }, image: {
         width: '100%',
         height: '100%',
-        resizeMode: 'contain'
     }, detailsContainer: {
         flex: 1,
         height: '100%',

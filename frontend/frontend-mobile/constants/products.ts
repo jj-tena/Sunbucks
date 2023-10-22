@@ -70,7 +70,7 @@ export const Products = [
         name: 'Batido de chocolate',
         price: 7,
         description: 'Exquisito batido de chocolate',
-        image: require('../assets/products/milkshakes/milkshake2.jpeg')
+        image: require('../assets/products/milkshakes/milkshake2.jpg')
     },
     {
         id: 9,
@@ -78,6 +78,6 @@ export const Products = [
         name: 'Batido de vainilla',
         price: 7,
         description: 'Exquisito batido de vainilla',
-        image: require('../assets/products/milkshakes/milkshake3.jpg')
+        image: require('../assets/products/milkshakes/milkshake3.png')
     }
 ]
