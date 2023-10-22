@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, Dimensions, StatusBar, ScrollView } from "react-native"
+import { View, Text, TouchableOpacity, Image, StatusBar, ScrollView } from "react-native"
 import ProductStyles from "./Product.styles";
 import { COLOURS } from "../../constants/colours";
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -8,7 +8,7 @@ const Product = ({route}) => {
 
     const {product} = route.params;
     
-    const {addToCart, goHome} = useProduct(route);   
+    const {addToCart, goHome} = useProduct();   
 
     return (
         <View style={ProductStyles.main}>

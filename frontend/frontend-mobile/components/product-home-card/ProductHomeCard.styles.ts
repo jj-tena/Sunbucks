@@ -1,6 +1,6 @@
 import { COLOURS } from "../../constants/colours";
 
-const ProductCardStyles = {
+const ProductHomeCardStyles = {
     main: {
         width: '48%',
         marginVertical: 14
@@ -26,4 +26,4 @@ const ProductCardStyles = {
     }
 }
 
-export default ProductCardStyles;
+export default ProductHomeCardStyles;

@@ -1,6 +1,7 @@
+import { StyleSheet } from "react-native";
 import { COLOURS } from "../../constants/colours";
 
-const HomeStyles = {
+const HomeStyles = StyleSheet.create({
     main: {
         width: '100%',
         height: '100%',
@@ -40,6 +41,6 @@ const HomeStyles = {
         letterSpacing: 1,
         lineHeight: 24
     }
-}
+})
 
 export default HomeStyles;

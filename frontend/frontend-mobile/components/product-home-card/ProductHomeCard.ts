@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 
-const useProductCard = () => {
+const useProductHomeCard = () => {
 
     const navigation = useNavigation();
 
     return {navigation};
 }
 
-export default useProductCard;
+export default useProductHomeCard;

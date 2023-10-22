@@ -1,3 +1,12 @@
+export type TProduct = {
+    id: number,
+    category: string,
+    name: string,
+    price: number,
+    description: string,
+    image: string   
+}
+
 export const Products = [
     {
         id: 1,

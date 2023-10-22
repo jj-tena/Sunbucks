@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { Products } from "../../constants/products";
+import { TProduct, Products } from "../../constants/products";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 const useHome = () => {
 
-    const [coffees, setCoffees] = useState([]);
-    const [cakes, setCakes] = useState([]);
-    const [milkshakes, setMilkshakes] = useState([]);
+    const [coffees, setCoffees] = useState<TProduct[]>([]);
+    const [cakes, setCakes] = useState<TProduct[]>([]);
+    const [milkshakes, setMilkshakes] = useState<TProduct[]>([]);
+
+    const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
     useEffect(() => {
         const coffeeList = [];
@@ -31,7 +35,11 @@ const useHome = () => {
         setMilkshakes(milkshakeList);
     }, []);
 
-    return {coffees, cakes, milkshakes};
+    const goCart = () => {
+        navigation.navigate("Cart");
+    }
+
+    return {coffees, cakes, milkshakes, goCart};
 }
 
 export default useHome;

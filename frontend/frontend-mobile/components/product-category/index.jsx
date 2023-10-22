@@ -1,7 +1,6 @@
-import { Image, Text, TouchableOpacity, View } from "react-native"
-import { COLOURS } from "../../constants/colours";
-import ProductCard from "../product-card";
+import { Text, View } from "react-native"
 import ProductCategoryStyles from "./ProductCategory.styles";
+import ProductHomeCard from "../product-home-card";
 
 const ProductCategory = ({products, category}) => {
     return (
@@ -17,7 +16,7 @@ const ProductCategory = ({products, category}) => {
             <View style={ProductCategoryStyles.products}>
                 {
                     products.map(item => {
-                        return <ProductCard key={item.id} product={item}/>
+                        return <ProductHomeCard key={item.id} product={item}/>
                     })
                 }
 

@@ -8,7 +8,7 @@ import useHome from "./Home";
 
 const Home = () => {
 
-    const {coffees, cakes, milkshakes} = useHome();
+    const {coffees, cakes, milkshakes, goCart} = useHome();
 
     return (
         <View style={HomeStyles.main}>
@@ -21,7 +21,7 @@ const Home = () => {
                             style={HomeStyles.shoppingBag}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={goCart}>
                         <MaterialCommunityIcons 
                             name="cart"
                             style={HomeStyles.cart}

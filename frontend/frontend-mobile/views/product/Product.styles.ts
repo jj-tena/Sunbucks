@@ -1,6 +1,7 @@
+import { StyleSheet } from "react-native";
 import { COLOURS } from "../../constants/colours";
 
-const ProductStyles = {
+const ProductStyles = StyleSheet.create({
     main: {
         width: '100%',
         height: '100%',
@@ -97,6 +98,6 @@ const ProductStyles = {
         color: COLOURS.white,
         textTransform: 'uppercase'
     }
-}
+})
 
 export default ProductStyles;

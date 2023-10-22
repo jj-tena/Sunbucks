@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './views/home';
 import Product from './views/product';
-import Cart from './views/Cart';
+import Cart from './views/cart';
 
 export default function App() {
 

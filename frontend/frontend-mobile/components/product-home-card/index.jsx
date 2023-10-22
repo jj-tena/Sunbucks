@@ -1,27 +1,27 @@
 import { Image, Text, TouchableOpacity, View } from "react-native"
-import ProductCardStyles from "./ProductCard.styles";
-import useProductCard from "./ProductCard";
+import useProductHomeCard from "./ProductHomeCard";
+import ProductHomeCardStyles from "./ProductHomeCard.styles";
 
-const ProductCard = ({product}) => {
+const ProductHomeCard = ({product}) => {
 
-    const {navigation} = useProductCard();
+    const {navigation} = useProductHomeCard();
 
     return (
         <TouchableOpacity
             onPress={() => navigation.navigate("Product", {product})}
-            style={ProductCardStyles.main}
+            style={ProductHomeCardStyles.main}
         >
             <View
-                style={ProductCardStyles.imageContainer}
+                style={ProductHomeCardStyles.imageContainer}
             >
                 <Image 
                     source={product.image}
-                    style={ProductCardStyles.image}
+                    style={ProductHomeCardStyles.image}
                     resizeMode={"cover"}
                 />
             </View>
             <Text
-                style={ProductCardStyles.name}
+                style={ProductHomeCardStyles.name}
             >
                 {product.name}
             </Text>
@@ -30,4 +30,4 @@ const ProductCard = ({product}) => {
     )
 }
 
-export default ProductCard;
+export default ProductHomeCard;
