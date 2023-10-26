@@ -44,24 +44,24 @@ const ProductCartCardStyles = {
     }, actionsUnitsContainer: {
         flexDirection: 'row',
         alignItems: 'center'
-    }, actionsUnitsMoreContainer: {
+    }, actionsUnitsLessContainer: {
         borderRadius: 100,
         marginRight: 20,
         padding: 4,
         borderWidth: 1,
         borderColor: COLOURS.backgroundMedium,
         opacity: 0.5
-    }, actionsUnitsMoreIcon: {
+    }, actionsUnitsLessIcon: {
         fontSize: 16,
         color: COLOURS.backgroundDark
-    }, actionsUnitsLessContainer: {
+    }, actionsUnitsMoreContainer: {
         borderRadius: 100,
         marginLeft: 20,
         padding: 4,
         borderWidth: 1,
         borderColor: COLOURS.backgroundMedium,
         opacity: 0.5
-    }, actionsUnitsLessIcon: {
+    }, actionsUnitsMoreIcon: {
         fontSize: 16,
         color: COLOURS.backgroundDark
     }, actionsDeleteIcon: {

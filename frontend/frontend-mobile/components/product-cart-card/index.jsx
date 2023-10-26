@@ -9,16 +9,16 @@ const ProductCartCard = ({inventory, refresh}) => {
     const {navigation, removeRefresh, increaseRefresh, decreaseRefresh} = useProductCartCard(refresh);
 
     return (
-        <Pressable
-            onPress={() => navigation.navigate('Product', {product: inventory.product})}
+        <View
             style={ProductCartCardStyles.main}
         >
-            <View style={ProductCartCardStyles.imageContainer}>
+            <Pressable style={ProductCartCardStyles.imageContainer}
+                onPress={() => navigation.navigate('Product', {product: inventory.product})}>
                 <Image 
                     source={inventory.product.image}
                     style={ProductCartCardStyles.image}
                 />
-            </View>
+            </Pressable>
             <View style={ProductCartCardStyles.detailsContainer}>
                 <View>
                     <Text style={ProductCartCardStyles.detailsName}>
@@ -32,41 +32,28 @@ const ProductCartCard = ({inventory, refresh}) => {
                 </View>
                 <View style={ProductCartCardStyles.actionsContainer}>
                     <View style={ProductCartCardStyles.actionsUnitsContainer}>
-                        <View style={ProductCartCardStyles.actionsUnitsMoreContainer}>
+                        <View style={ProductCartCardStyles.actionsUnitsLessContainer}>
                             <MaterialCommunityIcons 
                                 name="minus" 
-                                style={ProductCartCardStyles.actionsUnitsMoreIcon}
+                                style={ProductCartCardStyles.actionsUnitsLessIcon}
                                 onPress={() => decreaseRefresh(inventory.product.id)}
                             />
                         </View>
                         <Text>{inventory.units}</Text>
-                        <View style={{
-                            borderRadius: 100,
-                            marginLeft: 20,
-                            padding: 4,
-                            borderWidth: 1,
-                            borderColor: COLOURS.backgroundMedium,
-                            opacity: 0.5
-                        }}>
+                        <View style={ProductCartCardStyles.actionsUnitsMoreContainer}>
                             <MaterialCommunityIcons 
                                 name="plus" 
-                                style={ProductCartCardStyles.actionsUnitsLessIcon}
+                                style={ProductCartCardStyles.actionsUnitsMoreIcon}
                                 onPress={() => increaseRefresh(inventory.product.id)}
                             />
                         </View>
                     </View>
                     <Pressable onPress={() => removeRefresh(inventory.product.id)}>
-                        <MaterialCommunityIcons name="delete-outline" style={{
-                            fontSize: 16,
-                            color: COLOURS.backgroundDark,
-                            backgroundColor: COLOURS.backgroundLight,
-                            padding: 8,
-                            borderRadius: 100,
-                        }}/>
+                        <MaterialCommunityIcons name="delete-outline" style={ProductCartCardStyles.actionsDeleteIcon}/>
                     </Pressable>
                 </View>
             </View>
-        </Pressable>
+        </View>
     );
 }
 

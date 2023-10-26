@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ProductCategory from "../../components/product-category";
 import HomeStyles from "./Home.styles";
 import useHome from "./Home";
+import Header from "../../components/header";
 
 const Home = () => {
 
@@ -13,21 +14,9 @@ const Home = () => {
     return (
         <View style={HomeStyles.main}>
             <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
+            <Header />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={HomeStyles.header1}>
-                    <Pressable>
-                        <Entypo 
-                            name="shopping-bag"
-                            style={HomeStyles.shoppingBag}
-                        />
-                    </Pressable>
-                    <Pressable onPress={goCart}>
-                        <MaterialCommunityIcons 
-                            name="cart"
-                            style={HomeStyles.cart}
-                        />
-                    </Pressable>
-                </View>
+                
 
                 <View style={HomeStyles.header2}>
                     <Text style={HomeStyles.title}>

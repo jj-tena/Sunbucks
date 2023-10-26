@@ -27,7 +27,7 @@ const useCart = () => {
     const getTotal = (cart: TInventory[]) => {
         let totalPrice = 0;
         if (cart.length>0)
-            cart.forEach(inventory => totalPrice += inventory.product.price);
+            cart.forEach(inventory => totalPrice += inventory.product.price * inventory.units);
         return totalPrice;
     } 
 

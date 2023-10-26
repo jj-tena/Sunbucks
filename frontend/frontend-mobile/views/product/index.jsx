@@ -3,6 +3,7 @@ import ProductStyles from "./Product.styles";
 import { COLOURS } from "../../constants/colours";
 import Entypo from 'react-native-vector-icons/Entypo';
 import useProduct from "./Product";
+import Header from "../../components/header";
 
 const Product = ({route}) => {
 
@@ -13,6 +14,7 @@ const Product = ({route}) => {
     return (
         <View style={ProductStyles.main}>
             <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
+            <Header />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow: 1}}>
                 <View style={ProductStyles.header1}>
                     <View style={ProductStyles.homeContainer}>

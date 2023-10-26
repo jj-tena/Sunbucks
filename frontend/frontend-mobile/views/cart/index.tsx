@@ -4,6 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import useCart from "./Cart";
 import CartStyles from "./Cart.styles";
 import ProductCartCard from "../../components/product-cart-card";
+import Header from "../../components/header";
 
 const Cart = () => {
 
@@ -11,6 +12,7 @@ const Cart = () => {
 
     return (
         <View style={CartStyles.mainContainer}>
+            <Header />
             <ScrollView>
                 <View style={CartStyles.headerContainer}>
                     <Pressable onPress={goHome}>
@@ -104,7 +106,7 @@ const Cart = () => {
                                 Gastos de envío
                             </Text>
                             <Text style={CartStyles.resumeShippingPrice}>
-                                {total ? total / 20 : 0}
+                                {total ? total / 20 : 1}
                             </Text>
                         </View>
                         <View style={CartStyles.resumeTotalContainer}>
@@ -112,7 +114,7 @@ const Cart = () => {
                                 Total
                             </Text>
                             <Text style={CartStyles.resumeTotalPrice}>
-                                {total ? total*1.2 : 0}
+                                {total ? (total + total/20) : 0}
                             </Text>
                         </View>
                     </View>
