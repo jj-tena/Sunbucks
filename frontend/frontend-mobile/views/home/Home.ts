@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { TProduct, Products } from "../../constants/products";
+import { Products } from "../../constants/products";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { TProduct } from "../../constants/types";
 
 const useHome = () => {
 

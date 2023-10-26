@@ -2,13 +2,12 @@ import { View, Text, ScrollView, Pressable } from "react-native"
 import { COLOURS } from "../../constants/colours";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import useCart from "./Cart";
-import { TProduct } from "../../constants/products";
 import CartStyles from "./Cart.styles";
 import ProductCartCard from "../../components/product-cart-card";
 
 const Cart = () => {
 
-    const {cart, total, goHome, checkout} = useCart();
+    const {cart, total, goHome, checkout, getDataFromCart} = useCart();
 
     return (
         <View style={CartStyles.mainContainer}>
@@ -26,7 +25,7 @@ const Cart = () => {
                     Mi pedido
                 </Text>
                 <View style={CartStyles.productList}>
-                    {cart.length>0 ? cart.map((value, index)=> <ProductCartCard key={index} product={value}/>) : null}
+                    {cart.length>0 ? cart.map((value, index)=> <ProductCartCard key={index} inventory={value} refresh={getDataFromCart}/>) : null}
                 </View>
                 <View>
                     <View style={CartStyles.directionHeaderContainer}>

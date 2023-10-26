@@ -8,7 +8,7 @@ const Product = ({route}) => {
 
     const {product} = route.params;
     
-    const {addToCart, goHome} = useProduct();   
+    const {addToCart, goHome} = useProduct(product);   
 
     return (
         <View style={ProductStyles.main}>

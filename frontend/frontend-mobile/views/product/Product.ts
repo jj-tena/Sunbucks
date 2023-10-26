@@ -1,8 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import SyncStorage from 'sync-storage';
+import { TProduct } from "../../constants/types";
+import useStorage from "../../hooks/storage";
 
-const useProduct = () => {
+const useProduct = (product: TProduct) => {
+
+    const {addProduct} = useStorage();
 
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
@@ -10,8 +13,8 @@ const useProduct = () => {
         navigation.navigate('Home');
     }
 
-    const addToCart = async (id: number) => {
-        console.log("Add product " + id + " to the cart");
+    const addToCart = async () => {
+        addProduct(product);
         goHome();
     }
 
