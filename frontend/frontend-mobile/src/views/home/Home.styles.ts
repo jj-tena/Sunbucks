@@ -6,28 +6,11 @@ const HomeStyles = StyleSheet.create({
         width: '100%',
         height: '100%',
         backgroundColor: COLOURS.white,
-    }, header1: {
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 16,
-    }, shoppingBag: {
-        fontSize: 18,
-        color: COLOURS.backgroundMedium,
-        padding: 12,
-        borderRadius: 10,
-        backgroundColor: COLOURS.backgroundLight
-    }, cart: {
-        fontSize: 18,
-        color: COLOURS.backgroundMedium,
-        padding: 12,
-        borderRadius: 10,
-        borderWidth: 1,
-        backgroundColor: COLOURS.backgroundLight
-    }, header2: {
-        marginBottom: 10,
+    }, header: {
+        marginBottom: 5,
         padding: 16,
         alignItems: 'center',
+        marginTop: 25
     }, title: {
         fontSize: 26,
         color: COLOURS.black,

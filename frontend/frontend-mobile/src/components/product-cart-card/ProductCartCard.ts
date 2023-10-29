@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import useStorage from "../../hooks/storage";
+import useStorage from "../../storage/cart-storage";
 import { useEffect } from "react";
 
 const useProductCartCard = (refresh: () => {}) => {

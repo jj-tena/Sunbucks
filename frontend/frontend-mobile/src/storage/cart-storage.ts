@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TInventory, TProduct } from "../constants/types";
 
-const useStorage = () => {
+const useCartStorage = () => {
 
     const getCart = async () => {
         const item = await AsyncStorage.getItem("cart");
@@ -75,4 +75,4 @@ const useStorage = () => {
     return {addProduct, getCart, removeProduct, increaseUnits, decreaseUnits};
 }
 
-export default useStorage;
+export default useCartStorage;

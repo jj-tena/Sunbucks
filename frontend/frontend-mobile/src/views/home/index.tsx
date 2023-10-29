@@ -1,7 +1,5 @@
 import { View, Text, StatusBar, ScrollView, Pressable } from "react-native"
 import { COLOURS } from "../../constants/colours";
-import Entypo from 'react-native-vector-icons/Entypo'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import ProductCategory from "../../components/product-category";
 import HomeStyles from "./Home.styles";
 import useHome from "./Home";
@@ -18,9 +16,9 @@ const Home = () => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 
 
-                <View style={HomeStyles.header2}>
+                <View style={HomeStyles.header}>
                     <Text style={HomeStyles.title}>
-                        Sunbuckets
+                        ☀️Sunbucks☕
                     </Text>
                     <Text style={HomeStyles.subtitle}>
                         Tu radiante cafetería de confianza

@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Products } from "../../constants/products";
-import { TInventory, TProduct } from "../../constants/types";
-import useStorage from "../../hooks/storage";
-
+import { TInventory } from "../../constants/types";
+import useCartStorage from "../../storage/cart-storage";
 const useCart = () => {
 
-    const {getCart} = useStorage();
+    const {getCart} = useCartStorage();
 
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
@@ -36,8 +34,7 @@ const useCart = () => {
     }
 
     function checkout(): void {
-        console.log("Order confirmed");
-        goHome();
+        navigation.navigate('Order');
     }
 
     return {cart, total, goHome, navigation, checkout, getDataFromCart};

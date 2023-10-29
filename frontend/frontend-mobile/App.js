@@ -1,9 +1,10 @@
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './views/home';
-import Product from './views/product';
-import Cart from './views/cart';
+import Home from './src/views/home';
+import Product from './src/views/product';
+import Cart from './src/views/cart';
+import Order from './src/views/order';
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name='Home' component={Home}/>
         <Stack.Screen name='Product' component={Product}/>
         <Stack.Screen name='Cart' component={Cart}/>
+        <Stack.Screen name='Order' component={Order}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -16,7 +16,7 @@ const Header = () => {
                     style={HeaderStyles.shoppingBag}
                 />
             </Pressable>
-            <Image source={require('../../assets/logo/logo.png')} style={HeaderStyles.logo}/>
+            <Image source={require('../../../assets/logo/logo.png')} style={HeaderStyles.logo}/>
             <Pressable onPress={goCart}>
                 <MaterialCommunityIcons 
                     name="cart"

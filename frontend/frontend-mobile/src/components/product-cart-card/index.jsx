@@ -1,6 +1,5 @@
 import { Image, Text, Pressable, View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { COLOURS } from "../../constants/colours";
 import useProductCartCard from "./ProductCartCard";
 import ProductCartCardStyles from "./ProductCartCard.styles";
 

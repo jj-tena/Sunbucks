@@ -1,11 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { TProduct } from "../../constants/types";
-import useStorage from "../../hooks/storage";
+import useCartStorage from "../../storage/cart-storage";
 
 const useProduct = (product: TProduct) => {
 
-    const {addProduct} = useStorage();
+    const {addProduct} = useCartStorage();
 
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
 

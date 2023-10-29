@@ -50,10 +50,10 @@ const ProductCartCardStyles = {
         padding: 4,
         borderWidth: 1,
         borderColor: COLOURS.backgroundMedium,
-        opacity: 0.5
+        opacity: 0.5,
     }, actionsUnitsLessIcon: {
-        fontSize: 16,
-        color: COLOURS.backgroundDark
+        fontSize: 30,
+        color: COLOURS.backgroundDark,
     }, actionsUnitsMoreContainer: {
         borderRadius: 100,
         marginLeft: 20,
@@ -62,10 +62,10 @@ const ProductCartCardStyles = {
         borderColor: COLOURS.backgroundMedium,
         opacity: 0.5
     }, actionsUnitsMoreIcon: {
-        fontSize: 16,
+        fontSize: 30,
         color: COLOURS.backgroundDark
     }, actionsDeleteIcon: {
-        fontSize: 16,
+        fontSize: 30,
         color: COLOURS.backgroundDark,
         backgroundColor: COLOURS.backgroundLight,
         padding: 8,
