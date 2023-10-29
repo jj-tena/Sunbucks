@@ -5,7 +5,7 @@ const HomeStyles = StyleSheet.create({
     main: {
         width: '100%',
         height: '100%',
-        backgroundColor: COLOURS.white,
+        backgroundColor: COLOURS.yellow,
     }, header: {
         marginBottom: 5,
         padding: 16,

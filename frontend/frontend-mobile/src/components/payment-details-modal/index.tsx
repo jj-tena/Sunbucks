@@ -38,8 +38,8 @@ const PaymentDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProp
                             style={PaymentDetailsModalStyles.input}
                             onChangeText={setExpirationDate}
                             value={expirationDate}
-                            placeholder="Introduce la fecha de expiración"
-                            inputMode="none"
+                            placeholder="Introduce la fecha"
+                            inputMode="text"
                         />
                         <Text style={PaymentDetailsModalStyles.textInput}>CVV</Text>
                         <TextInput
@@ -62,7 +62,7 @@ const PaymentDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProp
                             style={PaymentDetailsModalStyles.discardButton}
                             onPress={() => {setModalVisible(!modalVisible);}}
                         >
-                            <Text style={PaymentDetailsModalStyles.buttonText}>Descartar</Text>
+                            <Text style={PaymentDetailsModalStyles.buttonText}>Cancelar</Text>
                         </Pressable>
                     </View>
                     

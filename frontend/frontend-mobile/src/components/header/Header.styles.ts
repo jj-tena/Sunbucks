@@ -7,7 +7,7 @@ const HeaderStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 25,
-        backgroundColor: COLOURS.black
+        backgroundColor: COLOURS.brown
     }, shoppingBag: {
         fontSize: 18,
         color: COLOURS.backgroundMedium,

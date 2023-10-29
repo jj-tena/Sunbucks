@@ -59,7 +59,7 @@ const Order = () => {
                             <MaterialCommunityIcons 
                                 name="chevron-right" 
                                 style={{
-                                    fontSize: 22,
+                                    fontSize: 30,
                                     color: COLOURS.black
                                 }}
                                 onPress={() => setUserDetailsModalVisible(true)}
@@ -91,7 +91,7 @@ const Order = () => {
                             <MaterialCommunityIcons 
                                 name="chevron-right" 
                                 style={{
-                                    fontSize: 22,
+                                    fontSize: 30,
                                     color: COLOURS.black
                                 }}
                                 onPress={() => setAddressDetailsModalVisible(true)}

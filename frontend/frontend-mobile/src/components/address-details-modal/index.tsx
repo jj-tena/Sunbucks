@@ -30,7 +30,7 @@ const AddressDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProp
                             onChangeText={setAddress}
                             value={address}
                             placeholder="Introduce tu dirección"
-                            inputMode="none"
+                            inputMode="text"
                         />
                         <Text style={AddressDetailsModalStyles.textInput}>Código Postal</Text>
                         <TextInput
@@ -46,7 +46,7 @@ const AddressDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProp
                             onChangeText={setCity}
                             value={city}
                             placeholder="Introduce tu localidad"
-                            inputMode="none"
+                            inputMode="text"
                         />
                     </SafeAreaView>
                     <View style={AddressDetailsModalStyles.buttonContainer}
@@ -61,7 +61,7 @@ const AddressDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProp
                             style={AddressDetailsModalStyles.discardButton}
                             onPress={() => {setModalVisible(!modalVisible);}}
                         >
-                            <Text style={AddressDetailsModalStyles.buttonText}>Descartar</Text>
+                            <Text style={AddressDetailsModalStyles.buttonText}>Cancelar</Text>
                         </Pressable>
                     </View>
                     

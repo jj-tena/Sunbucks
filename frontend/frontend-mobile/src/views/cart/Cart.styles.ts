@@ -5,7 +5,7 @@ const CartStyles = StyleSheet.create({
     mainContainer: {
         width: '100%',
         height: '100%',
-        backgroundColor: COLOURS.white,
+        backgroundColor: COLOURS.yellow,
         position: 'relative'
     }, headerContainer: {
         width: '100%',
@@ -21,7 +21,7 @@ const CartStyles = StyleSheet.create({
         backgroundColor: COLOURS.backgroundLight,
         borderRadius: 12
     }, headerText: {
-        fontSize: 14,
+        fontSize: 25,
         color: COLOURS.black,
         fontWeight: '400'
     }, subheaderText: {
@@ -179,7 +179,7 @@ const CartStyles = StyleSheet.create({
     }, buttonTouchable: {
         width: '86%',
         height: '60%',
-        backgroundColor: COLOURS.blue,
+        backgroundColor: COLOURS.rose,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center'

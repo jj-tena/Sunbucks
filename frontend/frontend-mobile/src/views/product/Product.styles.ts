@@ -5,11 +5,11 @@ const ProductStyles = StyleSheet.create({
     main: {
         width: '100%',
         height: '100%',
-        backgroundColor: COLOURS.white,
+        backgroundColor: COLOURS.yellow,
         position: 'relative'
     }, header1: {
         width: '100%',
-        backgroundColor: COLOURS.backgroundLight,
+        backgroundColor: COLOURS.golden,
         borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
         position: 'relative',
@@ -86,7 +86,7 @@ const ProductStyles = StyleSheet.create({
     }, buttonTouchable: {
         width: '86%',
         height: '90%',
-        backgroundColor: COLOURS.blue,
+        backgroundColor: COLOURS.rose,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center'

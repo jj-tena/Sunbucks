@@ -30,7 +30,7 @@ const UserDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProps) 
                             onChangeText={setName}
                             value={name}
                             placeholder="Introduce tu nombre"
-                            inputMode="none"
+                            inputMode="text"
                         />
                         <Text style={UserDetailsModalStyles.textInput}>Apellidos</Text>
                         <TextInput
@@ -38,7 +38,7 @@ const UserDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProps) 
                             onChangeText={setSurnames}
                             value={surnames}
                             placeholder="Introduce tus apellidos"
-                            inputMode="none"
+                            inputMode="text"
                         />
                         <Text style={UserDetailsModalStyles.textInput}>Correo electrónico</Text>
                         <TextInput
@@ -69,7 +69,7 @@ const UserDetailsModal = ({modalVisible, setModalVisible, refresh}: OrderProps) 
                             style={UserDetailsModalStyles.discardButton}
                             onPress={() => {setModalVisible(!modalVisible);}}
                         >
-                            <Text style={UserDetailsModalStyles.buttonText}>Descartar</Text>
+                            <Text style={UserDetailsModalStyles.buttonText}>Cancelar</Text>
                         </Pressable>
                     </View>
                     

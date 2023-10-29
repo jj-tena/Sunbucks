@@ -11,7 +11,7 @@ const AddressDetailsModalStyles = StyleSheet.create({
     modalView: {
       width: '90%',
       margin: 0,
-      backgroundColor: 'white',
+      backgroundColor: COLOURS.yellow,
       borderRadius: 20,
       padding: 35,
       alignItems: 'center',
@@ -59,7 +59,8 @@ const AddressDetailsModalStyles = StyleSheet.create({
         borderWidth: 0.5,
         padding: 10,
         borderRadius: 10,
-        opacity: 0.6
+        opacity: 0.6,
+        backgroundColor: COLOURS.white
     }, closeIcon: {
       fontSize: 50,
       color: COLOURS.red,

@@ -13,7 +13,7 @@ const ProductCartCardStyles = {
         padding: 14,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLOURS.backgroundLight,
+        backgroundColor: COLOURS.golden,
         borderRadius: 10,
         marginRight: 22
     }, image: {
